@@ -1,0 +1,31 @@
+cabal-version: 1.12
+name:          demo
+version:       0.9.0
+author:        Tom Feron
+maintainer:    Tom Feron
+build-type:    Simple
+
+library
+  hs-source-dirs: src
+  ghc-options: -Wall
+  default-language: Haskell2010
+
+  exposed-modules:
+    Module
+    OtherModule
+
+  build-depends:
+      base >=4.12 && <4.13
+    , eventsourcing
+    , hedgehog
+
+executable hello
+  main-is: Main.hs
+  hs-source-dirs: .
+  ghc-options: -Wall
+  default-language: Haskell2010
+
+  build-depends:
+      base
+    , demo
+    , text
